@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #f5eee4;
+  color: #4a302b;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.screen {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ОБЩЕЕ */
+
+.eyebrow {
+  margin-bottom: 25px;
+  color: #8b3040;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 3px;
+  background: #8b3040;
+  color: #fffaf5;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background: #6f2432;
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background: transparent;
+  border: 1px solid #8b3040;
+  color: #8b3040;
+}
+
+.button-secondary:hover {
+  background: #f1dfe0;
+  color: #6f2432;
+}
+
+/* КОНВЕРТ */
+
+.screen-start {
+  background:
+    radial-gradient(circle at 20% 20%, #ead8d1 0, transparent 25%),
+    radial-gradient(circle at 80% 80%, #ead8d1 0, transparent 25%),
+    #f5eee4;
+}
+
+.screen-start h1 {
+  margin-bottom: 20px;
+  color: #4a302b;
+  font-size: 50px;
+  font-weight: 200;
+  line-height: 0.95;
+}
+
+.envelope {
+  position: relative;
+  width: 360px;
+  height: 240px;
+  margin-bottom: 35px;
+  background: #e5cdbd;
+  border: 1px solid #c6a999;
+  box-shadow: 0 15px 35px rgba(74, 48, 43, 0.15);
+}
+
+.envelope::before,
+.envelope::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.envelope::before {
+  left: 0;
+  border-width: 0 0 137px 180px;
+  border-color: transparent transparent #d8bbaa transparent;
+}
+
+.envelope::after {
+  right: 0;
+  border-width: 137px 0 0 180px;
+  border-color: transparent transparent transparent #d8bbaa;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 180px solid transparent;
+  border-right: 180px solid transparent;
+  border-top: 123px solid #edd9cc;
+  z-index: 2;
+}
+
+/* Надпись на конверте */
+
+.envelope .eyebrow {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  margin: 0;
+  color: #8b3040;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-transform: none;
+}
+
+/* Сердце-кнопка */
+
+.envelope-button {
+  position: absolute;
+  left: 50%;
+  top: 85px;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  transform: translateX(-50%);
+
+  border: none;
+  background: transparent;
+
+  color: #8b3040;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.wax-seal {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #8b3040;
+  color: #f5dfe0;
+
+  font-size: 25px;
+
+  box-shadow: 0 4px 8px rgba(74, 48, 43, 0.2);
+}
+
+
+/* ПИСЬМО */
+
+.screen-letter {
+  background: #e9ddd0;
+}
+
+.paper {
+  width: min(620px, 100%);
+  padding: 55px 45px;
+  background: #fffaf2;
+  box-shadow: 0 15px 45px rgba(74, 48, 43, 0.12);
+}
+
+.letter-small {
+  margin-bottom: 30px;
+  color: #8b3040;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.paper h2 {
+  margin-bottom: 30px;
+  font-size: clamp(34px, 6vw, 52px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.letter-text {
+  max-width: 450px;
+  margin: 0 auto 20px;
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.heart {
+  margin: 25px 0;
+  color: #8b3040;
+  font-size: 35px;
+}
+
+/* ПРИГЛАШЕНИЕ */
+
+.screen-invitation {
+  background: #8b3040;
+}
+
+.invitation-card {
+  width: min(650px, 100%);
+  padding: 55px 45px;
+  background: #fffaf2;
+  border: 8px solid #e5cdbd;
+  outline: 1px solid #8b3040;
+  outline-offset: -18px;
+  box-shadow: 0 20px 50px rgba(45, 20, 20, 0.25);
+}
+
+.invitation-card h2 {
+  margin-bottom: 15px;
+  font-size: clamp(38px, 7vw, 58px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.invitation-main {
+  margin-bottom: 35px;
+  color: #8b3040;
+  font-size: 25px;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.details {
+  max-width: 430px;
+  margin: 0 auto 35px;
+}
+
+.detail {
+  padding: 16px 0;
+  border-top: 1px solid #dccbc0;
+}
+
+.detail:last-child {
+  border-bottom: 1px solid #dccbc0;
+}
+
+.detail span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8b3040;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.detail strong {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.question {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ФИНАЛ */
+
+.screen-final {
+  background: #f5eee4;
+}
+
+.final-card {
+  width: min(600px, 100%);
+  padding: 60px 30px;
+}
+
+.big-heart {
+  font-size: 60px;
+  animation: heartbeat 1.5s infinite;
+}
+
+.final-card h2 {
+  margin-bottom: 25px;
+  font-size: clamp(42px, 8vw, 65px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.final-date {
+  margin-bottom: 25px;
+  color: #8b3040;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.final-text {
+  margin-bottom: 30px;
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+.signature {
+  margin-bottom: 45px;
+  font-size: 26px;
+  font-style: italic;
+}
+
+.made-with {
+  color: #a7897e;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* МОБИЛЬНЫЙ */
+
+@media (max-width: 600px) {
+  .paper,
+  .invitation-card {
+    padding: 45px 25px;
+  }
+
+  .envelope {
+    width: 300px;
+    height: 200px;
+  }
+
+  .envelope::before {
+    border-width: 0 0 114px 150px;
+  }
+
+  .envelope::after {
+    border-width: 114px 0 0 150px;
+  }
+
+  .envelope-flap {
+    border-left-width: 150px;
+    border-right-width: 150px;
+    border-top-width: 103px;
+  }
+
+  .envelope .eyebrow {
+    font-size: 11px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons .button {
+    width: 100%;
+  }
+}
